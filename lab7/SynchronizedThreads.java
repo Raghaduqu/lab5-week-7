@@ -54,14 +54,9 @@ public class SynchronizedThreads {
         private int count = 0;
 
         /**
-         * Increase the counter by one.
-         *
-         * FIX: Added 'synchronized' keyword so that only one thread can
-         * execute this method at a time on this Counter instance. Without
-         * synchronization, the read-modify-write sequence (read count,
-         * print, write count+1) is not atomic — another thread can read
-         * the same stale value between the read and write steps, causing
-         * lost updates.
+         * FIX: added synchronized so only one thread can run this at a time.
+         * Without it, two threads could read the same count and overwrite each other,
+         * which causes the final number to be wrong.
          *
          */
         public synchronized void increment(String name) {

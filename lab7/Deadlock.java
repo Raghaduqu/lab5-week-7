@@ -10,7 +10,7 @@ public class Deadlock {
         }
         /**
           * locks aquired: this + bower, ordered alphabeticaly by name
-          * deadlock happend bc thread1 holds alphonse waits for gaston,
+          * deadlock happend because thread1 holds alphonse waits for gaston,
           * thread2 holds gaston waits for alphonse -- neither moves foward
           * fix: always grab the alphabeticaly smaller friend first, breaks the cycle 
          */
